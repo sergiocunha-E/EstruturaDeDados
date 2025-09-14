@@ -2,7 +2,7 @@ package ListaJava;
 
 import java.util.Scanner; // import vai aqui
 
-public class Questão01 {
+public class Questao01 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         
