@@ -1,89 +1,69 @@
-package Stack_Dinamica;
-
-import java.util.NoSuchElementException;
-
 /**
- * Implementação de uma Pilha Dinâmica Genérica 
- * 
+ * Implementação de uma pilha dinâmica duplamente encadeada genérica.
+ * Esta classe implementa uma pilha que pode armazenar elementos de qualquer tipo,
+ * utilizando uma estrutura de nós duplamente encadeados.
+ *
+ * @param <T> o tipo dos elementos armazenados na pilha
+ * @author Sérgio Emílio da Cunha Meira Santos
+ * @version 1.0
+ * @since 2025-06-04
  */
-public class LinkedStack<T> implements Stackable {
+public class LinkedStack {
+    /**
+     * Ponteiro para o topo da pilha
+     */
 
-    /** Aponta para o topo da pilha. */
-    private DoubleNode <T> topPointer;
-    /** Indica o número atual de dados da pilha. */
+    private DoubleNode<T> topPointer;
+    /**
+     * Quantidade atual de elementos
+     */
     private int numberElements;
-    /** Indica o número máximo de elementos que a pilha pode possuir. */
+    /**
+     * Tamanho máximo da pilha
+     */
     private int maxElements;
 
-
-    /** 
-    * Construtor que não recebe nada e por padrão cria uma pilha com 10 posições
-    */
-
-    public LinkedStack() {
+    /**
+     * Construtor padrão que cria uma pilha com capacidade para 10 elementos.
+     */
+    public linkedStack() {
         this(10);
     }
 
-    /** 
-    * Construtor que recebe um inteiro
-    *
-    *
-    *@param maxElements, contém o número maximo de elementos
-    */
-    public LinkedStack (int maxElements){
-        topPointer = null;
-        numberElements = 0;
-        this.maxElements = maxElements;
-   
-    }
-
-    /** 
-    * verifica se a pilha está vazia
-    *
-    *
-    *@return retorna True se a pilha estiver vazia
-    *
-    *
-    */
-
-
-    @Override
-    boolean isEmpty() {
-        return numberElements == 0; 
+    public linkedStack(int maxElements) {
 
     }
 
-    
-    boolean isFull(){
-        return numberElements == maxElements;
-    }
+    boolean T
 
-
-    @Override
-    public T peek() throws RuntimeException{
-        if(!isEmpty()) {
-            throw  new NoSuchElementException("Stack is empty!");
-        } 
-        return topPointer.getData();
-    }
-
-    public T pop() throws RuntimeException{
-        if(!isEmpty()){
-            throw new NoSuchElementException("Stack is empty!");
+    peek() {
+        if (isEmpty()) {
+            throw noSuchElementException("Stack is empty!")
         }
         T auxData = topPointer.getData();
         numberElements--;
         topPointer = topPointer.getPrevious();
-        topPointer.setNext(null);
+        ropPointer.setNext(null);
         return auxData;
     }
 
-    void push(T data);
-    void update(T newData);
+    public push(T data) {
+        if (isFull()) {
+            throw noSuchElementException("Stack is full!")
+        }
+        DoubleNode<T> newNode = new DoubleNode<>();
+        newNode.setData(data);
+        topPointer.setNext(newNode)
+        newNode.setPrevous(topPointer);
+        topPointer = newNode;
+        numberElements++;
+    }
+public void update(T newData){
+    if (isEmpty()) {
+        throw new NoSuchElementException("Pilha Vazia!");
+    }
+    topPointer.setData(newData);
 
-    boolean isFull();
-    boolean isEmpty();
-    String print();
-    
-    
+}
+
 }
