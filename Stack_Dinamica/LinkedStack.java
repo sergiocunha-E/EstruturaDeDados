@@ -5,7 +5,7 @@
  *
  * @param <T> o tipo dos elementos armazenados na pilha
  * @author Sérgio Emílio da Cunha Meira Santos
- * @version 1.0
+ * @version 1.0.0
  * @since 2025-06-04
  */
 public class LinkedStack {
