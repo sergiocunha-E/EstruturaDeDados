@@ -1,4 +1,4 @@
-package Dequeue_dinamica;
+package DEQue_dinamica;
 
 //DEQue = Double Ended Queue
 
